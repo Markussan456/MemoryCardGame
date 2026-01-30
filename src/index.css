@@ -12,6 +12,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
 
 a {
   font-weight: 500;
@@ -67,13 +76,40 @@ button:focus-visible {
   }
 }
 .pokemonImgs {
-  border: 2px solid white;
   width: 10rem;
 }
-.pokemonImgs:hover {
+.pokemonDiv div:hover {
   cursor: pointer;
+  background-color: #535bf2;
+  box-shadow: 0px 0px 30px rgb(255, 255, 255);
 }
 .pokemonDiv {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.pokemonDiv p {
+  color: #1a1a1a;
+  font-weight: bold;
+}
+.pokemonDiv div {
+  height: fit-content;
+  border: 2px solid white;
+  background-color: #f6f7f3;
+  border-radius: 0.5rem;
+}
+.pokemonName {
+  margin-top: -2rem;
+}
+.scores {
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  display: flex;
+  margin: 0;
+}
+.scores p,
+.scores h1 {
+  margin: 0;
 }

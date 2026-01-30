@@ -24,6 +24,7 @@ const pokemonNames = [
   "mew",
   "articuno",
 ];
+
 function App() {
   async function getAllPokemon() {
     const allPokemon = [];
@@ -84,19 +85,23 @@ function App() {
 
   return (
     <>
-      <h1>{score}</h1>
-      <h2>{bestScore}</h2>
+      <div className="scores">
+        <h1>Score : {score}</h1>
+        <p>Best Score : {bestScore}</p>
+      </div>
       <div className="pokemonDiv">
-        {pokemon ? (
+        {pokemon && pokemon.length > 0 ? (
           pokemon.map((pokemons) => {
             return (
-              <img
-                onClick={() => handleClick(pokemons)}
-                className="pokemonImgs"
-                key={pokemons.id}
-                src={pokemons.sprites.front_default}
-                alt=""
-              />
+              <div key={pokemons.id}>
+                <img
+                  onClick={() => handleClick(pokemons)}
+                  className="pokemonImgs"
+                  src={pokemons.sprites.front_default}
+                  alt=""
+                />
+                <p className="pokemonName">{pokemons.name}</p>
+              </div>
             );
           })
         ) : (
