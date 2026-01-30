@@ -66,3 +66,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.pokemonImgs {
+  border: 2px solid white;
+  width: 10rem;
+}
+.pokemonImgs:hover {
+  cursor: pointer;
+}
+.pokemonDiv {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
